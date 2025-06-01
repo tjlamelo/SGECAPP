@@ -11,13 +11,5 @@ enum Role: string
     case AgentMinistere = 'agent_ministere';
     case AgentOrganisme = 'agent_organisme';
     case Default = 'default';
-
-
-
-
-
-
-
-
-
+ 
 }

@@ -24,6 +24,7 @@ private function checkAdmin()
 
     public function index()
     {     
+               $this->checkAdmin();
         // Statistiques
         $totalUsers = User::count();
         $totalStructures = Structure::count();

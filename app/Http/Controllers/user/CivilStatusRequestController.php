@@ -285,6 +285,18 @@ class CivilStatusRequestController extends Controller
         return view('user.etatcivil.form', compact('civilStatusRequest', 'userDocuments', 'selectedDocuments'));
     }
 
+
+    
+    /**
+     * Récupère les documents de l'utilisateur connecté via userDetail.
+     */
+    private function getUserDocuments()
+    {
+        return UserDocument::whereHas('userDetail', function ($query) {
+            $query->where('personne_id', Auth::id());
+        })->get();
+    }
+
     /**
      * Met à jour une demande existante.
      */
@@ -369,16 +381,6 @@ class CivilStatusRequestController extends Controller
 
 
 
-
-    /**
-     * Récupère les documents de l'utilisateur connecté via userDetail.
-     */
-    private function getUserDocuments()
-    {
-        return UserDocument::whereHas('userDetail', function ($query) {
-            $query->where('personne_id', Auth::id());
-        })->get();
-    }
 
     /**
      * Valide la requête d'envoi ou de mise à jour.

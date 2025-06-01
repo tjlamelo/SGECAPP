@@ -32,7 +32,7 @@ class UserDocumentsController extends Controller
         'Acte_deces',
         'Autre'
     ];
-        $userDetails = UserDetail::all(); // liste pour sélection
+        $userDetails = UserDetail::all();  
         return view('user.documents.form', compact('userDetails'), compact('documentTypes'));
     }
 

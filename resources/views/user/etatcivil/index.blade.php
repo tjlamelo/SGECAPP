@@ -1,5 +1,41 @@
 <x-user-layout>
     <div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+
+      <div class="security-alert bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-lg shadow-md p-6 mb-10">
+            <div class="flex items-start">
+                <div class="flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+                <div class="ml-4">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        </svg>
+                        Consignes importantes pour les demandes d'actes d'état civil
+                    </h3>
+                    <div class="mt-2 text-gray-700">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li class="font-medium">Toute demande doit être constituée <span class="text-blue-600">exclusivement</span> à partir des documents préalablement uploadés dans votre compte</li>
+                            <li>Vous devez vous assurer de <span class="font-semibold text-red-600">l'authenticité et de la validité</span> des documents fournis</li>
+                            <li>La soumission d'une demande entraîne la transmission <span class="font-semibold">automatique</span> de toutes vos informations personnelles aux services compétents</li>
+                            <li>Toute information erronée ou document falsifié entraînera le <span class="font-semibold text-red-600">rejet immédiat</span> de votre demande</li>
+                            <li>En cas de documents non conformes ou de suspicion de fraude, des <span class="font-semibold text-red-600">poursuites judiciaires</span> pourront être engagées conformément à la loi camerounaise</li>
+                            <li>L'officier d'état civil peut rejeter votre demande en indiquant la raison précise du rejet dans votre espace personnel</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 p-3 bg-blue-100 border border-blue-200 rounded-lg">
+                        <p class="text-sm text-blue-800 flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Votre demande sera traitée dans un délai de 5 à 10 jours ouvrables. Vous serez notifié par email à chaque étape de l'avancement de votre dossier.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Header with title and action button -->
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
             <div>

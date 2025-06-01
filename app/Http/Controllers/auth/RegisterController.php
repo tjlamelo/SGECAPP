@@ -6,10 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Enum\Role;
+use Illuminate\Support\Facades\Auth;
+
 class RegisterController extends Controller
 {
     public function showRegistrationForm()
     {
+            if (Auth::check()) {
+            return redirect()->route('home');
+        }
         return view('auth.register');
     }
     public function register(Request $request)

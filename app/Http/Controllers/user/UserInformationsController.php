@@ -7,6 +7,7 @@ use App\Http\Requests\UserDetailsRequest;
 use App\Models\UserDetail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use App\Models\UserDocument;
 use Illuminate\Support\Facades\Log;
 class UserInformationsController extends Controller
 {
@@ -31,7 +32,6 @@ class UserInformationsController extends Controller
         $detail = UserDetail::firstOrNew(['personne_id' => $user->id]);
 
         $completionPercentage = $this->getOverallCompletionPercentage($detail->toArray());
-
         return view('user.informations.index', [
             'user' => $user,
             'detail' => $detail,
@@ -39,6 +39,7 @@ class UserInformationsController extends Controller
             'currentSection' => null,
             'fields' => [],
             'completionPercentage' => $completionPercentage,
+        
         ]);
     }
 

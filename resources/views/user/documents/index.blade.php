@@ -1,18 +1,62 @@
 <x-user-layout title="Mes documents" style="documents" script="documents">
     <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <!-- En-tête avec bouton d'ajout -->
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
-            <div>
-                <h1 class="text-2xl font-bold text-gray-800">Mes documents</h1>
-                <p class="text-sm text-gray-500 mt-1">Gérez ici tous vos documents d'identité</p>
-            </div>
-            <a href="{{ route('user.documents.create') }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                </svg>
-                Ajouter un document
-            </a>
+<div class="security-alert bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-lg shadow-md p-6 mb-10">
+    <div class="flex items-start">
+        <div class="flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
         </div>
+        <div class="ml-4">
+            <h3 class="text-lg font-bold text-gray-900 mb-2 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                </svg>
+                Informations essentielles pour la soumission de documents
+            </h3>
+            <div class="mt-2 text-gray-700">
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Tous les documents utilisés pour une demande doivent être <span class="font-semibold text-blue-700">préalablement téléversés</span> dans votre espace personnel.</li>
+                    <li>Assurez-vous de fournir des pièces <span class="font-semibold text-red-600">authentiques, lisibles et valides</span>.</li>
+                    <li>La validation de votre demande dépend entièrement de la qualité et de la conformité des documents fournis.</li>
+                    <li>La soumission d’une demande entraîne la <span class="font-semibold">transmission automatique</span> de vos informations aux services compétents.</li>
+                    <li>Tout document falsifié ou information erronée entraînera un <span class="font-semibold text-red-600">rejet immédiat</span> de la demande.</li>
+                    <li>En cas de fraude ou de tentative de tromperie, des <span class="font-semibold text-red-600">sanctions légales</span> pourront être appliquées conformément à la loi en vigueur.</li>
+                    <li>Un motif de rejet détaillé sera visible dans votre espace personnel, le cas échéant.</li>
+                </ul>
+            </div>
+            <div class="mt-4 p-3 bg-blue-100 border border-blue-200 rounded-lg">
+                <p class="text-sm text-blue-800 flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Le traitement de votre dossier prend entre <strong>5 et 10 jours ouvrables</strong>. Vous recevrez des notifications par email à chaque mise à jour du statut.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="glass-header p-6 rounded-xl backdrop-blur-md bg-white/80 shadow-sm mb-8 border border-gray-100">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+                <div class="space-y-1">
+                    <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Mes documents</h1>
+                    <p class="text-indigo-600 font-medium flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        Documents sécurisés - SGEC Cameroun
+                    </p>
+                </div>
+                <a href="{{ route('user.documents.create') }}" class="btn-primary group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 transition-transform group-hover:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                    Ajouter un document
+                </a>
+            </div>
+        </div>
+    
 
         <!-- Liste des documents -->
         @if($documents->isEmpty())
@@ -55,7 +99,7 @@
                                 <p class="text-sm text-gray-600 mt-1">N° {{ $doc->document_number ?? 'Non spécifié' }}</p>
                             </div>
                             <div class="flex space-x-2">
-                                <a href="{{ route('user.documents.edit', $doc) }}" class="text-indigo-600 hover:text-indigo-800 transition-colors" title="Modifier">
+                                <a href="{{ route('user.documents.show', $doc) }}" class="text-indigo-600 hover:text-indigo-800 transition-colors" title="Modifier">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                     </svg>

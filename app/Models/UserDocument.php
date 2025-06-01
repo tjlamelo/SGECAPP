@@ -42,4 +42,5 @@ protected $casts = [
     {
         return $this->belongsTo(User::class, 'verified_by');
     }
+ 
 }
